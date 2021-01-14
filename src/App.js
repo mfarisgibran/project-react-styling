@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
 
-function App() {
+const Button = styled.button`
+  cursor: pointer;
+  border-radius: 3px;
+  border: 2px solid teal;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  background: ${(props) => (props.primary ? 'teal' : 'white')};
+  color: ${(props) => (props.primary ? 'white' : 'teal')};
+  transition: all 0.25s ease-out;
+  &:hover {
+    filter: brightness(1.25);
+  }
+`
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Poject React Styling</h1>
+      <Button>Normal Button</Button>
+      <Button primary>Primary Button</Button>
     </div>
-  );
+  )
 }
-
-export default App;
